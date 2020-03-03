@@ -1,26 +1,23 @@
 import React from 'react';
+import { Container } from '@material-ui/core'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import ReportPage from './pages/ReportPage'
 
 
+function App(props) {
 
-function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <BrowserRouter>
+          <Switch>
+            <Route exact path="/" component={ ReportPage } {...props} />
+          </Switch>
+      </BrowserRouter>
+    </Container>
+  )
+
+  
 }
 
-export default App;
+export default App
